@@ -1,13 +1,13 @@
-package invoice_transfer.proof;
+package proof.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProofApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProofApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }
