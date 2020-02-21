@@ -16,7 +16,7 @@ class FtpClient {
     private final int port;
     private final String user;
     private final String password;
-    private FTPClient ftp;
+    private static FTPClient ftp;
 
     FtpClient(String server, int port, String user, String password) {
         this.server = server;
@@ -32,12 +32,13 @@ class FtpClient {
 
         ftp.connect(server, port);
         int reply = ftp.getReplyCode();
-        if(!FTPReply.isPositiveCompletion(reply)) {
+        if (!FTPReply.isPositiveCompletion(reply)) {
             ftp.disconnect();
             throw new IOException("Exception in connecting to FTP Server");
         }
         ftp.login(user, password);
     }
+
     void close() throws IOException {
         ftp.disconnect();
     }
@@ -54,10 +55,11 @@ class FtpClient {
         ftp.storeFile(path, new FileInputStream(file));
     }
 
-    void downloadFile(String source, String destination) throws IOException {
+    static FTPClient downloadFile(String source, String destination) throws IOException {
         FileOutputStream out = new FileOutputStream(destination);
         ftp.retrieveFile(source, out);
         out.close();
+        return downloadFile(source, destination);
     }
 
 }

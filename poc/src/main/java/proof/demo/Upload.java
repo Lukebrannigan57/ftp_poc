@@ -8,7 +8,6 @@ public class Upload {
     }
 
 
-
 //    public  boolean canConnect() {
 //        String server = "testftp.beatcatalog.com";
 //        int port = 21;
