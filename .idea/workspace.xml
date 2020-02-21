@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24eca005-ef19-4be4-8a3c-60fed2b7899f" name="Default Changelist" comment="" />
+    <list default="true" id="24eca005-ef19-4be4-8a3c-60fed2b7899f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/src/main/java/proof/demo/FtpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/poc/src/main/java/proof/demo/FtpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poc/src/test/java/proof/demo/FtpClientIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/poc/src/test/java/proof/demo/FtpClientIntegrationTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +45,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="JUnit.FtpClientIntegrationTest.givenRemoteFile_whenDownloading_isThenOnTheLocalFilesystem">
-    <configuration name="FtpClientIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FtpClientIntegrationTest.directoryExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -51,28 +55,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="proof.demo" />
       <option name="MAIN_CLASS_NAME" value="proof.demo.FtpClientIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FtpClientIntegrationTest.canWriteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="proof.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="proof.demo" />
-      <option name="MAIN_CLASS_NAME" value="proof.demo.FtpClientIntegrationTest" />
-      <option name="METHOD_NAME" value="canWriteTest" />
+      <option name="METHOD_NAME" value="directoryExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FtpClientIntegrationTest.givenLocalFile_whenUpload_ExistsInRemoteLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FtpClientIntegrationTest.fileExistsOnFtpServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -82,7 +71,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="proof.demo" />
       <option name="MAIN_CLASS_NAME" value="proof.demo.FtpClientIntegrationTest" />
-      <option name="METHOD_NAME" value="givenLocalFile_whenUpload_ExistsInRemoteLocation" />
+      <option name="METHOD_NAME" value="fileExistsOnFtpServer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FtpClientIntegrationTest.fileExistsOnServer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="proof.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="proof.demo" />
+      <option name="MAIN_CLASS_NAME" value="proof.demo.FtpClientIntegrationTest" />
+      <option name="METHOD_NAME" value="fileExistsOnServer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,7 +109,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FtpClientIntegrationTest.givenRemoteFile_whenListingRemoteFiles_thenItIsContainedInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FtpClientIntegrationTest.serverExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +119,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="proof.demo" />
       <option name="MAIN_CLASS_NAME" value="proof.demo.FtpClientIntegrationTest" />
-      <option name="METHOD_NAME" value="givenRemoteFile_whenListingRemoteFiles_thenItIsContainedInList" />
+      <option name="METHOD_NAME" value="serverExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,10 +135,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FtpClientIntegrationTest.givenRemoteFile_whenDownloading_isThenOnTheLocalFilesystem" />
-        <item itemvalue="JUnit.FtpClientIntegrationTest" />
-        <item itemvalue="JUnit.FtpClientIntegrationTest.givenRemoteFile_whenListingRemoteFiles_thenItIsContainedInList" />
-        <item itemvalue="JUnit.FtpClientIntegrationTest.givenLocalFile_whenUpload_ExistsInRemoteLocation" />
-        <item itemvalue="JUnit.FtpClientIntegrationTest.canWriteTest" />
+        <item itemvalue="JUnit.FtpClientIntegrationTest.fileExistsOnServer" />
+        <item itemvalue="JUnit.FtpClientIntegrationTest.directoryExists" />
+        <item itemvalue="JUnit.FtpClientIntegrationTest.serverExists" />
+        <item itemvalue="JUnit.FtpClientIntegrationTest.fileExistsOnFtpServer" />
       </list>
     </recent_temporary>
   </component>
@@ -165,38 +170,38 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="739" y="321" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582227148583" />
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1582303564531">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom" timestamp="1582318342075">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582303564531" />
-    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1582303564531">
+    <state width="1877" height="300" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582318342075" />
+    <state width="1877" height="300" key="GridCell.Tab.0.center" timestamp="1582318342075">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582303564531" />
-    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1582303564531">
+    <state width="1877" height="300" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582318342075" />
+    <state width="1877" height="300" key="GridCell.Tab.0.left" timestamp="1582318342075">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582303564531" />
-    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1582303564531">
+    <state width="1877" height="300" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582318342075" />
+    <state width="1877" height="300" key="GridCell.Tab.0.right" timestamp="1582318342075">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582303564531" />
-    <state width="1877" height="396" key="GridCell.Tab.1.bottom" timestamp="1582297968602">
+    <state width="1877" height="300" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582318342075" />
+    <state width="1877" height="396" key="GridCell.Tab.1.bottom" timestamp="1582314944217">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="396" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582297968602" />
-    <state width="1877" height="396" key="GridCell.Tab.1.center" timestamp="1582297968601">
+    <state width="1877" height="396" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582314944217" />
+    <state width="1877" height="396" key="GridCell.Tab.1.center" timestamp="1582314944217">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="396" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582297968601" />
-    <state width="1877" height="396" key="GridCell.Tab.1.left" timestamp="1582297968601">
+    <state width="1877" height="396" key="GridCell.Tab.1.center/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582314944217" />
+    <state width="1877" height="396" key="GridCell.Tab.1.left" timestamp="1582314944217">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="396" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582297968601" />
-    <state width="1877" height="396" key="GridCell.Tab.1.right" timestamp="1582297968601">
+    <state width="1877" height="396" key="GridCell.Tab.1.left/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582314944217" />
+    <state width="1877" height="396" key="GridCell.Tab.1.right" timestamp="1582314944217">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="396" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582297968601" />
+    <state width="1877" height="396" key="GridCell.Tab.1.right/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1582314944217" />
     <state x="342" y="282" key="new project wizard" timestamp="1582218105067">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

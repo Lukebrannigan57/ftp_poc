@@ -6,6 +6,7 @@ import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -55,11 +56,27 @@ class FtpClient {
         ftp.storeFile(path, new FileInputStream(file));
     }
 
-    static FTPClient downloadFile(String source, String destination) throws IOException {
-        FileOutputStream out = new FileOutputStream(destination);
-        ftp.retrieveFile(source, out);
-        out.close();
-        return downloadFile(source, destination);
+    static FTPClient downloadFile(String remote, OutputStream bytes) throws IOException {
+        
+
+        //https://stackoverflow.com/questions/858980/file-to-byte-in-java
+
+        String destination = new String(bytes, StandardCharsets.UTF_8);
+        ftp.retrieveFile(remote, destination);
+        return downloadFile(remote, destination);
+
+
+//        FileOutputStream out = new FileOutputStream(destination);
+//        ftp.retrieveFile(source, out);
+//        out.close();
+//        return downloadFile(source, destination);
     }
+//    static FTPClient downloadFile(String source, String destination) throws IOException {
+//
+//        FileOutputStream out = new FileOutputStream(destination);
+//        ftp.retrieveFile(source, out);
+//        out.close();
+//        return downloadFile(source, destination);
+//    }
 
 }

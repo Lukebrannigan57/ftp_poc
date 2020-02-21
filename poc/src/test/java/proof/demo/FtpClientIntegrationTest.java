@@ -26,7 +26,8 @@ import static org.junit.Assert.assertTrue;
 public class FtpClientIntegrationTest {
 
     private FakeFtpServer fakeFtpServer;
-    private FtpClient ftpClient;
+    private FtpClient ftpClient ;
+    private FileSystem fileSystem = new UnixFakeFileSystem();
 
 
     @Before
@@ -34,7 +35,6 @@ public class FtpClientIntegrationTest {
         fakeFtpServer = new FakeFtpServer();
         fakeFtpServer.addUserAccount(new UserAccount("user", "password", "/data"));
 
-        FileSystem fileSystem = new UnixFakeFileSystem();
         fileSystem.add(new DirectoryEntry("/data"));
         fileSystem.add(new FileEntry("/data/foobar.txt", "abcdef 1234567890"));
         fakeFtpServer.setFileSystem(fileSystem);
@@ -86,27 +86,47 @@ public class FtpClientIntegrationTest {
         }
         assertThat(fileList).contains("foobarTest.txt");
     }
-
     @Test
-    public void givenRemoteFile_whenDownloading_isThenOnTheLocalFilesystem() throws IOException {
+    public void serverExists() {
         FTPClient ftpClient = new FTPClient();
         System.out.println(ftpClient);
-//        File foobar = new File("/data/foobar.txt");
-//        File buz = new File("downloaded_buz.txt");
-//        if (foobar.isDirectory()) System.out.println("foobar is a directory");
-//        if (foobar.isFile()) System.out.println("foobar is a file");
-//        if (buz.isDirectory()) System.out.println("buz is a directory");
-//        if (buz.isFile()) System.out.println("buz is a file");
+        FTPClient expected = ftpClient;
+        assertEquals(expected, ftpClient);
+    }
 
+    @Test
+    public void directoryExists() {
+        fileSystem.add(new DirectoryEntry("/data"));
+        boolean expected = fileSystem.isDirectory("/data");
+        Collection<String> data = fileSystem.listFiles("/data");
+        System.out.println(data);
+        assertEquals(expected, true);
+    }
+
+    @Test
+    public void fileExistsOnServer() {
+        fileSystem.add(new DirectoryEntry("/data"));
+        fileSystem.add(new FileEntry("/data/foobar.txt", "abcdef 1234567890"));
+        Collection<String> data = fileSystem.listFiles("/data");
+        System.out.println(data);
+        boolean expected = fileSystem.isFile("/data/foobar.txt");
+        assertEquals(expected, true);
+
+    }
+    @Test
+    public void givenRemoteFile_whenDownloading_isThenOnTheLocalFilesystem() throws IOException {
+        fileSystem.add(new DirectoryEntry("/data"));
+        fileSystem.add(new FileEntry("/data/foobar.txt", "abcdef 1234567890"));
+        fileSystem.add(new FileEntry("/data/downloaded_buz.txt"));
+        System.out.println(ftpClient);
+        File buz = new File("/data/foobar.txt");
 
         FtpClient.downloadFile("/data/foobar.txt", "downloaded_buz.txt");
 
-//        String buzPath = buz.getPath();
-//        String foobarPath = foobar.getPath();
-//        System.out.println(foobarPath);
-//        System.out.println(buzPath);
-        assertThat(new File("/data/foobar.txt")).exists();
-//        assertTrue(foobar.buz.exists());
+        Collection<String> data = fileSystem.listFiles("/data");
+
+        System.out.println(data);
+        assertThat(buz).exists();
         new File("downloaded_buz.txt").delete();
     }
 
